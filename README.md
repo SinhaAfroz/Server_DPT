@@ -39,7 +39,7 @@ b2b-frontend/
 **Caution**
 When using Vite with Vue.js, ensure you configure the handling of asset URLs properly to avoid issues with absolute paths, especially in production.
 Include this in vite.config.js:
-
+ ```bash
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
