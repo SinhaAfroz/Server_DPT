@@ -36,7 +36,10 @@ b2b-frontend/
 6. **Run the Docker container, serving the application on `http://localhost`**
     ```bash
    docker run -p 80:80 b2b-frontend:latest
-**Caution**
+:
+
+🔴**Caution**:
+
 When using Vite with Vue.js, ensure you configure the handling of asset URLs properly to avoid issues with absolute paths, especially in production.
 Include this in vite.config.js:
  ```bash
