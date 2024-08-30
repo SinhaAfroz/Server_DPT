@@ -1,3 +1,3 @@
  #!/bin/bash
-cd Documents/b2b-backend/
+cd b2b/backend/directory/path
  ./vendor/bin/sail up
