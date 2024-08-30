@@ -36,3 +36,22 @@ b2b-frontend/
 6. **Run the Docker container, serving the application on `http://localhost`**
     ```bash
    docker run -p 80:80 b2b-frontend:latest
+**Caution**
+When using Vite with Vue.js, ensure you configure the handling of asset URLs properly to avoid issues with absolute paths, especially in production.
+Include this in vite.config.js:
+
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+export default defineConfig({
+  plugins: [vue({
+    // This is needed, or else Vite will try to find image paths (which it wont be able to find because this will be called on the web, not directly)
+    // For example <img src="/images/logo.png"> will not work without the code below
+    template: {
+        transformAssetUrls: {
+            includeAbsolute: false,
+        },
+    },
+  })],
+})
+
