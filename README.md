@@ -36,7 +36,22 @@ b2b-frontend/
 6. **Run the Docker container, serving the application on `http://localhost`**
     ```bash
    docker run -p 80:80 b2b-frontend:latest
-:
+**Script**
+a simple Bash script used to navigate to a specific directory and then start a service using Laravel Sail.
+📅 Scheduling the Script with Cron
+To automate the execution of script using cron, follow these steps:
+1. Save the Script
+Ensure your script (e.g., serverStart.sh) is saved in a directory.
+2. Make sure the script is executable:
+   ```bash
+   chmod +x /path/to/your/start-sail.sh
+3. Edit the Crontab File
+   ```bash
+   crontab -e
+4. Run the script every day at 2:00 AM 
+   ```bash
+   0 2 * * * /path/to/your/serverStart.sh
+
 
 🔴**Caution**:
 
